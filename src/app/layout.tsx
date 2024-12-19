@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import '@/assets/styles/index.scss'
+
 import { Menu } from '@/components/Menu/Menu'
 
 import styles from './layout.module.scss'
+import '@/assets/styles/index.scss'
 
 export const metadata: Metadata = {
     title: 'XMusic - Главная страница',
@@ -10,12 +11,7 @@ export const metadata: Metadata = {
     icons: {
         icon: [
             {
-                media: '(prefers-color-scheme: dark)',
-                url: '/images/favicon-dark.png',
-            },
-            {
-                media: '(prefers-color-scheme: light)',
-                url: '/images/favicon-light.png',
+                url: './images/favicon.png',
             },
         ],
     },
