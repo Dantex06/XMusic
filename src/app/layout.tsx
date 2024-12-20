@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import { Menu } from '@/components/Menu/Menu'
+import { Header } from '@/components/Header/Header'
 
 import styles from './layout.module.scss'
 import '@/assets/styles/index.scss'
@@ -27,7 +28,8 @@ export default function RootLayout({
             <body>
                 <div className={styles.app}>
                     <Menu />
-                    {children}
+                    <Header />
+                    <div className={styles.main}>{children}</div>
                 </div>
             </body>
         </html>

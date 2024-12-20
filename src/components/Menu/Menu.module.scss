@@ -10,6 +10,7 @@
 }
 
 .menu {
+  grid-area: menu;
   @include new-flex-col-gap(51px);
   background-color: var(--background);
   width: 280px;

@@ -1,0 +1,61 @@
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: var(--grey-default);
+  cursor: pointer;
+}
+
+.profileIconContainer {
+  background: none;
+  svg {
+    background: none;
+    g {
+      transition: 0.2s ease;
+    }
+  }
+}
+
+.profileIconContainer {
+  svg:hover {
+    g {
+      stroke: white;
+      stroke-opacity: 1;
+    }
+  }
+}
+
+.modal {
+  padding: 5px;
+  border: 1px solid var(--grey-default);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 85px;
+  right: 15px;
+  height: 150px;
+  width: 180px;
+}
+
+.button {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  text-align: left;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--grey-default);
+}
+
+.line {
+  height: 1px;
+  background-color: var(--grey-default)
+}
