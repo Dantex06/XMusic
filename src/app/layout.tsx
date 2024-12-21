@@ -5,6 +5,7 @@ import { Header } from '@/components/Header/Header'
 
 import styles from './layout.module.scss'
 import '@/assets/styles/index.scss'
+import {ProfileMenu} from "@/components/ProfileMenu/ProfileMenu";
 
 export const metadata: Metadata = {
     title: 'XMusic - Главная страница',
@@ -30,6 +31,7 @@ export default function RootLayout({
                     <Menu />
                     <Header />
                     <div className={styles.main}>{children}</div>
+                    <ProfileMenu />
                 </div>
             </body>
         </html>

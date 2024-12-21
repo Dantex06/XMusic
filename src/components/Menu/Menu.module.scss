@@ -11,39 +11,66 @@
 
 .menu {
   grid-area: menu;
-  @include new-flex-col-gap(51px);
-  background-color: var(--background);
-  width: 280px;
+  @include new-flex-col-gap(24px);
+  background-color: var(--second-main-color);
+  width: 220px;
   height: 100vh;
-  padding: 30px 0 0 35px;
+  padding-top: 30px;
 }
 
 .title {
   font-family: 'FugazOne', sans-serif;
+  padding-left: 25px;
   font-size: 48px;
   color: var(--theme-color);
+  span {
+    font-family: 'FugazOne', sans-serif;
+    font-size: 48px;
+  }
+}
+
+.sectionTitleBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 180px;
 }
 
 .sectionTitle {
-  font-size: 20px;
+  color: var(--grey-ligher);
+  font-weight: bold;
+  padding-left: 25px;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 
 .itemTitle {
+  color: var(--grey-ligher);
   font-size: 18px;
 }
 
 .itemTitleSelected {
-  color: var(--theme-color);
+  color: var(--white);
 }
 
 .sectionItem {
+  padding-left: 25px;
+  height: 48px;
   @include new-flex-gap(16px);
   align-items: center;
   cursor: pointer;
 }
 
+.sectionItem:hover {
+  background-image: linear-gradient(to right, #272727, var(--second-main-color));
+}
+
+.icon {
+  width: 24px;
+}
+
 .section {
-  @include new-flex-col-gap(24px);
+  @include new-flex-col-gap(15px);
 }
 
 .sections {
@@ -58,7 +85,9 @@
 }
 
 .borderSelected {
-  height: 24px;
+  height: 48px;
   width: 3px;
   background-color: var(--theme-color);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }

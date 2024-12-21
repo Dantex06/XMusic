@@ -2,10 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background-color: var(--background);
   color: var(--default-text-color);
-  font-family: 'SFPro', sans-serif;
+  font-family: 'Manrope', sans-serif;
   text-decoration: none;
   outline: 0;
   border: none;
+}
+
+button {
+  background: none;
 }

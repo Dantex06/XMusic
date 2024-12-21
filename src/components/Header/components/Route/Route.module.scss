@@ -1,0 +1,22 @@
+.route {
+
+}
+
+.routeLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  font-weight: bold;
+}
+
+.unActiveLink {
+  color: var(--grey-light);
+}

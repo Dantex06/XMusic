@@ -2,8 +2,9 @@
 
 import ProfileIcon from '@/assets/icons/main/user.svg'
 
-import styles from './Profile.module.scss'
 import { useEffect, useRef, useState } from 'react'
+
+import styles from './Profile.module.scss'
 
 export const Profile = () => {
     const modalRef = useRef<HTMLDivElement>(null)
