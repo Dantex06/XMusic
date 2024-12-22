@@ -6,5 +6,5 @@ export const staticLinks = {
     artists: '/artists',
     favourite: '/favourite',
     playlist: '/playlist',
-    recent: '/recent',
+    recent: '/recently',
 }

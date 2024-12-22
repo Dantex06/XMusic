@@ -1,4 +1,148 @@
-.profile {
-  padding: 40px 35px 0 35px;
+.profileMenu {
+  background: var(--second-main-color);
+  height: 100vh;
+  width: 288px;
+  padding: 22px 25px 0 25px;
+
   grid-area: profileMenu;
+}
+
+.profileSection {
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: bold;
+
+  height: 48px;
+}
+
+.openProfile {
+  height: 14px;
+  cursor: pointer;
+  transform: rotate(90deg);
+}
+
+.closeProfile {
+  width: 14px;
+  transform: rotate(270deg);
+}
+
+.openProfile:hover {
+  svg path{
+    transition: 0.2s ease;
+    stroke-width: 2.5px;
+  }
+}
+
+.modalSection {
+  height: 68px;
+  position: relative;
+}
+
+.modalBorder {
+  border: 1px solid var(--second-main-color);
+}
+
+.modalBorderOpen {
+  background: var(--second-main-color);
+  position: absolute;
+  border: 1.5px solid var(--grey-light);
+  border-radius: 12px;
+  transition: 0.2s ease;
+  z-index: 2;
+}
+
+.modal {
+  padding: 0 10px 10px 10px;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalButton {
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  text-align: left;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.modalButton:hover {
+  background-color: #272727;
+}
+
+.infoSection {
+  position: relative;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.titleInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: var(--theme-color);
+    font-weight: bold;
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.search{
+  cursor: pointer;
+  svg {
+    fill: var(--white);
+    fill-opacity: 1;
+  }
+}
+
+.search:hover {
+  svg {
+    fill: var(--theme-color)
+  }
+}
+
+.friendsInfo::-webkit-scrollbar {
+  display: none;
+}
+
+.friendsInfo {
+  height: 76vh;
+  overflow-y: scroll;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.shareIcon:hover {
+  cursor: pointer;
+  svg {
+    stroke: var(--theme-color);
+  }
 }

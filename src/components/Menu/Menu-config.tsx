@@ -18,7 +18,7 @@ import PlaylistSelected from '@/assets/icons/menu/playlist/Playlist-selected.svg
 type TMenuItem = {
     titleItem: string
     icon: ReactNode
-    iconSelected: ReactNode,
+    iconSelected: ReactNode
     link: string
 }
 
@@ -30,17 +30,22 @@ type TMenuConfig = {
 export const menuConfig: TMenuConfig[] = [
     {
         items: [
-            { titleItem: 'Home', icon: <HomeIcon />, iconSelected: <HomeSelected/>, link: staticLinks.main },
+            {
+                titleItem: 'Home',
+                icon: <HomeIcon />,
+                iconSelected: <HomeSelected />,
+                link: staticLinks.main,
+            },
             {
                 titleItem: 'Genre',
                 icon: <GenreIcon />,
-                iconSelected: <GenreSelected/>,
+                iconSelected: <GenreSelected />,
                 link: staticLinks.genre,
             },
             {
                 titleItem: 'Artists',
                 icon: <ArtistsIcon />,
-                iconSelected: <ArtistsSelected/>,
+                iconSelected: <ArtistsSelected />,
                 link: staticLinks.artists,
             },
         ],
@@ -51,13 +56,13 @@ export const menuConfig: TMenuConfig[] = [
             {
                 titleItem: 'Liked',
                 icon: <LikedIcon />,
-                iconSelected: <LikedSelected/>,
+                iconSelected: <LikedSelected />,
                 link: staticLinks.favourite,
             },
             {
-                titleItem: 'Recent played',
+                titleItem: 'Recently played',
                 icon: <RecentIcon />,
-                iconSelected: <RecentSelected/>,
+                iconSelected: <RecentSelected />,
                 link: staticLinks.recent,
             },
         ],
@@ -68,7 +73,7 @@ export const menuConfig: TMenuConfig[] = [
             {
                 titleItem: 'My playlist #1',
                 icon: <PlaylistIcon />,
-                iconSelected: <PlaylistSelected/>,
+                iconSelected: <PlaylistSelected />,
                 link: staticLinks.playlist + '/1',
             },
         ],
