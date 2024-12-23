@@ -1,21 +1,32 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import clsx from 'clsx'
 
 import { Profile } from '@/components'
+import { Friends } from '@/components/ProfileMenu/components/sections/friends/Friends'
+import { Playing } from '@/components/ProfileMenu/components/sections/playing/Playing'
 
 import ArrowIcon from '@/assets/icons/main/arrow.svg'
-import UserExample from '@/assets/images/User-example.png'
-import ShareIcon from '@/assets/icons/main/share-audio.svg'
-import SearchIcon from '@/assets/icons/main/search.svg'
 
 import styles from './ProfileMenu.module.scss'
 
 export const ProfileMenu = () => {
     const [openModal, setOpenModal] = useState<boolean>(false)
-    // const [pageMenu, setPageMenu] = useState<string | null>()
+    const [pageMenu, setPageMenu] = useState<string>('friends')
+
+    const modalHandler = () => {
+        setOpenModal(!openModal)
+    }
+
+    const menuPage = () => {
+        switch (pageMenu) {
+            case 'friends':
+                return <Friends />
+            case 'playing':
+                return <Playing />
+        }
+    }
 
     return (
         <div className={styles.profileMenu}>
@@ -31,7 +42,7 @@ export const ProfileMenu = () => {
                             <p>Egor Rogachev</p>
                         </div>
                         <div
-                            onClick={() => setOpenModal(!openModal)}
+                            onClick={modalHandler}
                             className={clsx(styles.openProfile, {
                                 [styles.closeProfile]: openModal,
                             })}
@@ -44,13 +55,16 @@ export const ProfileMenu = () => {
                             <button className={styles.modalButton}>
                                 Account
                             </button>
-                            <button className={styles.modalButton}>
+                            <button
+                                className={styles.modalButton}
+                                onClick={() => setPageMenu('friends')}
+                            >
                                 Friends
                             </button>
-                            <button className={styles.modalButton}>
-                                Theme
-                            </button>
-                            <button className={styles.modalButton}>
+                            <button
+                                className={styles.modalButton}
+                                onClick={() => setPageMenu('playing')}
+                            >
                                 Now playing
                             </button>
                             <button className={styles.modalButton}>
@@ -61,107 +75,7 @@ export const ProfileMenu = () => {
                 </div>
             </div>
 
-            <div className={styles.infoSection}>
-                <div className={styles.titleInfo}>
-                    <h3 className={styles.title}>Your friends</h3>
-                    <div className={styles.search}>
-                        <SearchIcon />
-                    </div>
-                </div>
-                <div className={styles.friendsInfo}>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                    <div className={styles.user}>
-                        <Image src={UserExample} alt="logo" />
-                        <p className={styles.userName}>James Rodriguez</p>
-                        <div className={styles.shareIcon}>
-                            <ShareIcon />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div className={styles.infoSection}>{menuPage()}</div>
         </div>
     )
 }

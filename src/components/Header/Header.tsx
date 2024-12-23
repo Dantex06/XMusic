@@ -5,11 +5,10 @@ import SearchIcon from '@/assets/icons/main/search.svg'
 
 import styles from './Header.module.scss'
 
-
 export const Header = () => {
     return (
         <div className={styles.header}>
-            <Route/>
+            <Route />
             <div className={styles.searchNotification}>
                 <form className={styles.search}>
                     <div className={styles.iconContainer}>
@@ -22,7 +21,6 @@ export const Header = () => {
                 </form>
                 <Notification />
             </div>
-
         </div>
     )
 }

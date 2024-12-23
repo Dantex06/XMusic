@@ -1,0 +1,87 @@
+.mainInfo {
+  margin: 0 auto;
+}
+
+.playing {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.imageBlock {
+  margin-top: 15px;
+  img {
+    width: 220px;
+    height: 220px;
+    border-radius: 8px;
+  }
+}
+
+.trackInfo {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+
+.trackTitle {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.compositors {
+  font-weight: bold;
+  color: var(--grey-ligher)
+}
+
+.nextTrackInfo {
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nextTrackInfo:hover {
+
+  border-radius: 8px;
+  background-color: var(--grey-default);
+}
+
+.nextTrack {
+  padding: 5px;
+  margin-top: 15px;
+
+  background-color: var(--grey-dark);
+  border-radius: 8px;
+}
+
+.nextTitle {
+  padding: 5px 5px 0 5px;
+  font-weight: bold;
+}
+
+.nextTrackIcon {
+  position: relative;
+  img {
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.playIcon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+.nextTrackTitle {
+  font-size: 18px;
+}
+
+.nextTrackCompositors {
+  color: var(--grey-ligher)
+}

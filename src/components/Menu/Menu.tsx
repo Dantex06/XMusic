@@ -1,7 +1,6 @@
 'use client'
 import { usePathname } from 'next/navigation'
 
-import { staticLinks } from '@/assets/routingLinks'
 import { menuConfig } from '@/components/Menu/Menu-config'
 
 import clsx from 'clsx'
@@ -11,30 +10,31 @@ import AddIcon from '@/assets/icons/main/add.svg'
 
 import styles from './Menu.module.scss'
 
-
-
 export const Menu = () => {
     const pathname = usePathname()
-    if ([staticLinks.register, staticLinks.login].includes(pathname)) {
-        return
-    }
 
     return (
         <div className={styles.menu}>
-            <h2 className={styles.title}>X<span>Music</span></h2>
+            <h2 className={styles.title}>
+                X<span>Music</span>
+            </h2>
             <div className={styles.sections}>
                 {menuConfig.map((menuSection, index) => {
                     return (
-                        <div
-                            className={styles.section}
-                            key={index}
-                        >
-                            {menuSection?.sectionTitle && menuSection.sectionTitle === 'PLAYLIST' ?
-                                <div className={styles.sectionTitleBlock}><p
-                                    className={styles.sectionTitle}>{menuSection.sectionTitle}</p><AddIcon/></div>
-                                : <p className={styles.sectionTitle}>
+                        <div className={styles.section} key={index}>
+                            {menuSection?.sectionTitle &&
+                            menuSection.sectionTitle === 'PLAYLIST' ? (
+                                <div className={styles.sectionTitleBlock}>
+                                    <p className={styles.sectionTitle}>
+                                        {menuSection.sectionTitle}
+                                    </p>
+                                    <AddIcon />
+                                </div>
+                            ) : (
+                                <p className={styles.sectionTitle}>
                                     {menuSection.sectionTitle}
-                                </p>}
+                                </p>
+                            )}
                             <div>
                                 {menuSection.items.map((menuItem) => {
                                     return (
@@ -44,24 +44,27 @@ export const Menu = () => {
                                             href={menuItem.link}
                                         >
                                             <div className={styles.icon}>
-                                                {pathname ===
-                                                    menuItem?.link ? menuItem.iconSelected : menuItem.icon}
-
+                                                {pathname === menuItem?.link
+                                                    ? menuItem.iconSelected
+                                                    : menuItem.icon}
                                             </div>
-                                            <div className={styles.selectBorder}>
+                                            <div
+                                                className={styles.selectBorder}
+                                            >
                                                 <p
                                                     className={clsx(
                                                         styles.itemTitle,
                                                         {
                                                             [styles.itemTitleSelected]:
-                                                            pathname ===
-                                                            menuItem?.link,
+                                                                pathname ===
+                                                                menuItem?.link,
                                                         }
                                                     )}
                                                 >
                                                     {menuItem.titleItem}
                                                 </p>
-                                                {pathname === menuItem?.link && (
+                                                {pathname ===
+                                                    menuItem?.link && (
                                                     <span
                                                         className={
                                                             styles.borderSelected
@@ -73,7 +76,6 @@ export const Menu = () => {
                                     )
                                 })}
                             </div>
-
                         </div>
                     )
                 })}

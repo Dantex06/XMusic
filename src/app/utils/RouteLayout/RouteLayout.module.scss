@@ -6,7 +6,10 @@
   grid-template-areas:
   'menu header profileMenu'
   'menu main profileMenu';
+}
 
+.appBlock {
+  display: block;
 }
 
 .main {
