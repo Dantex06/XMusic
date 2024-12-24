@@ -9,6 +9,8 @@ import { staticLinks } from '@/assets/routingLinks'
 import styles from './RouteLayout.module.scss'
 import dynamic from 'next/dynamic'
 import clsx from 'clsx'
+import store from '@/store'
+import { Provider } from 'react-redux'
 
 export const RouteLayoutDynamic = dynamic(
     () => import('@/app/utils/RouteLayout/RouteLayout'),
@@ -26,13 +28,17 @@ export default function RouteLayout({
     )
 
     return (
-        <div className={clsx(styles.app, { [styles.appBlock]: !isAuthPage })}>
-            {isAuthPage && <Menu />}
-            {isAuthPage && <Header />}
-            <div className={clsx({ [styles.main]: isAuthPage })}>
-                {children}
+        <Provider store={store}>
+            <div
+                className={clsx(styles.app, { [styles.appBlock]: !isAuthPage })}
+            >
+                {isAuthPage && <Menu />}
+                {isAuthPage && <Header />}
+                <div className={clsx({ [styles.main]: isAuthPage })}>
+                    {children}
+                </div>
+                {isAuthPage && <ProfileMenu />}
             </div>
-            {isAuthPage && <ProfileMenu />}
-        </div>
+        </Provider>
     )
 }

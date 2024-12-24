@@ -1,21 +1,41 @@
 'use client'
 
-import styles from './Login.module.scss'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { useAppSelector, useAppDispatch } from '@/store'
+import { loginRequest } from '@/API/Profile/AuthService'
 
-type TFormFields = {
-    email: string
-    login: string
-    password: string
-}
+import { LoginSchema } from '@/app/login/LoginSchema'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { TLoginRequest } from '@/API/Profile/types'
+
+import EyeOpenIcon from '@/assets/icons/main/eye-open.svg'
+import EyeCloseIcon from '@/assets/icons/main/eye-close.svg'
+
+import styles from './Login.module.scss'
+import { useState } from 'react'
+import Link from 'next/link'
+import { staticLinks } from '@/assets/routingLinks'
 
 const LoginPage = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<TFormFields>()
-    const onSubmit: SubmitHandler<TFormFields> = (data) => console.log(data)
+    } = useForm<TLoginRequest>({
+        resolver: yupResolver(LoginSchema),
+    })
+    const { isLoading, error } = useAppSelector((state) => state.profile)
+    const dispatch = useAppDispatch()
+    const onSubmit: SubmitHandler<TLoginRequest> = (data) => {
+        console.log(data)
+        dispatch(loginRequest(data))
+    }
+    const [showPassword, setShowPassword] = useState(false)
+
+    if (isLoading) {
+        return <div>loading...</div>
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.loginPage}>
             <div className={styles.blockSection}>
@@ -28,17 +48,26 @@ const LoginPage = () => {
                         <input
                             className={styles.field}
                             placeholder="email@example.com"
-                            {...register('email', { required: true })}
+                            {...register('email', { required: !errors.login })}
                         />
-                        {errors.email && <span>This field is required</span>}
+                        {errors.email && (
+                            <span className={styles.errorMessage}>
+                                {errors.email.message}
+                            </span>
+                        )}
                     </div>
                     <div className={styles.fieldBlock}>
                         <p className={styles.label}>Login</p>
                         <input
                             className={styles.field}
-                            placeholder="userName"
-                            {...register('login')}
+                            placeholder="Username"
+                            {...register('login', { min: 6 })}
                         />
+                        {errors.login && (
+                            <span className={styles.errorMessage}>
+                                {errors.login.message}
+                            </span>
+                        )}
                     </div>
                     <div className={styles.fieldBlock}>
                         <p className={styles.label}>Password</p>
@@ -46,15 +75,38 @@ const LoginPage = () => {
                             className={styles.field}
                             placeholder="*******"
                             {...register('password', { required: true })}
+                            type={showPassword ? 'text' : 'password'}
                         />
-                        {errors.password && <span>This field is required</span>}
+                        <div
+                            className={styles.showPassword}
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <EyeOpenIcon /> : <EyeCloseIcon />}
+                        </div>
+                        {errors.password && (
+                            <span className={styles.errorMessage}>
+                                This field is required
+                            </span>
+                        )}
                     </div>
-                    <div>
+                    <div className={styles.buttonSection}>
                         <button className={styles.submitButton} type="submit">
                             Login
                         </button>
+                        {error && (
+                            <span className={styles.errorMessage}>{error}</span>
+                        )}
                     </div>
                 </div>
+                <p className={styles.registerLink}>
+                    No account?{' '}
+                    <Link
+                        className={styles.register}
+                        href={staticLinks.register}
+                    >
+                        Register
+                    </Link>
+                </p>
             </div>
         </form>
     )

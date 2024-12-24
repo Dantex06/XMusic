@@ -43,14 +43,29 @@
 }
 
 .fieldBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   width: 324px;
   margin: 0 auto;
   text-align: start;
+
 }
 
 .label {
   font-weight: bold;
-  margin-bottom: 5px;
+}
+
+.buttonSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px
+}
+
+.errorMessage {
+  color: var(--error)
 }
 
 .submitButton {
@@ -60,4 +75,22 @@
   height: 48px;
   border-radius: 25px;
   font-size: 20px;
+}
+
+.showPassword {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  top: 35px;
+}
+
+.registerLink, .register {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.register {
+  color: var(--theme-color);
+  cursor: pointer;
 }
