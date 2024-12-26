@@ -1,0 +1,26 @@
+.artistItem {
+  gap: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background: var(--second-main-color);
+  width: 300px;
+  height: 100px;
+}
+
+.profileIcon {
+  img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-weight: bold;
+}

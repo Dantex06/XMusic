@@ -40,7 +40,7 @@ export const menuConfig: TMenuConfig[] = [
                 titleItem: 'Genre',
                 icon: <GenreIcon />,
                 iconSelected: <GenreSelected />,
-                link: staticLinks.genre,
+                link: staticLinks.genres,
             },
             {
                 titleItem: 'Artists',

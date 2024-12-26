@@ -13,6 +13,8 @@ import ArrowIcon from '@/assets/icons/main/arrow.svg'
 
 import styles from './Section-list.module.scss'
 import { GenreTypesList } from '@/components/CardButton/components/Genre/config'
+import { linkType, staticLinks } from '@/assets/routingLinks'
+import Link from 'next/link'
 
 type TSectionProps = {
     title: string
@@ -82,7 +84,12 @@ export const SectionList: FC<TSectionProps> = ({ title, type }) => {
     return (
         <div className={styles.section}>
             <div className={styles.titleSection}>
-                <p className={styles.title}>{title}</p>
+                <Link
+                    className={styles.title}
+                    href={staticLinks[title.toLowerCase() as linkType]}
+                >
+                    {title}
+                </Link>
                 <ArrowIcon />
             </div>
             <div

@@ -32,10 +32,6 @@ const RegisterPage = () => {
     }
     const [showPassword, setShowPassword] = useState(false)
 
-    if (isLoading) {
-        return <div>loading...</div>
-    }
-
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.loginPage}>
             <div

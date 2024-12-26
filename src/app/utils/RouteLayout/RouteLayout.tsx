@@ -29,7 +29,7 @@ export default function RouteLayout({
     const isAuthPage = ![staticLinks.register, staticLinks.login].includes(
         pathname
     )
-    console.log(width)
+
     return (
         <Provider store={store}>
             <div

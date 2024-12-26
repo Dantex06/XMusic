@@ -7,7 +7,6 @@ export const routeConfig = (routes: string) => {
         recently: 'Recently',
         playlist: 'Playlist',
     }
-    console.log(routes)
 
     return routes
         .split('/')

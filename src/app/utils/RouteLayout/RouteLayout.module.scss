@@ -14,11 +14,11 @@
 
 .smallWindow {
   display: grid;
-  grid-template-columns: 1fr; /* Один столбец */
-  grid-template-rows: auto 1fr; /* Заголовок и основной контент */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
         'header'
-        'main'; /* Убираем меню и профиль на малом экране */
+        'main';
   height: 100vh;
 }
 
