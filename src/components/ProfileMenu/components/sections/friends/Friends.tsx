@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import UserExample from '@/assets/images/User-example.png'
+import UserExample from '@/assets/images/examples/User-example.png'
 import ShareIcon from '@/assets/icons/main/share-audio.svg'
 
 import styles from './Friends.module.scss'

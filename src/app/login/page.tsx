@@ -48,7 +48,7 @@ const LoginPage = () => {
                         <input
                             className={styles.field}
                             placeholder="email@example.com"
-                            {...register('email', { required: !errors.login })}
+                            {...register('email', { required: !errors.name })}
                         />
                         {errors.email && (
                             <span className={styles.errorMessage}>
@@ -61,11 +61,11 @@ const LoginPage = () => {
                         <input
                             className={styles.field}
                             placeholder="Username"
-                            {...register('login', { min: 6 })}
+                            {...register('name', { min: 6 })}
                         />
-                        {errors.login && (
+                        {errors.name && (
                             <span className={styles.errorMessage}>
-                                {errors.login.message}
+                                {errors.name.message}
                             </span>
                         )}
                     </div>
@@ -85,7 +85,7 @@ const LoginPage = () => {
                         </div>
                         {errors.password && (
                             <span className={styles.errorMessage}>
-                                This field is required
+                                {errors.password.message}
                             </span>
                         )}
                     </div>

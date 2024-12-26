@@ -12,7 +12,7 @@ export const LoginSchema = yup.object().shape({
                 return !!(login || value)
             }
         ),
-    login: yup
+    name: yup
         .string()
         .test(
             'login-or-email',
@@ -30,5 +30,8 @@ export const LoginSchema = yup.object().shape({
                 return value ? value.length >= 6 : true
             }
         ),
-    password: yup.string().required('Password is required'),
+    password: yup
+        .string()
+        .required('Password is required')
+        .min(8, 'Password must be at least 8 characters long'),
 })

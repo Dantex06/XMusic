@@ -1,0 +1,100 @@
+.loginPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blockSection {
+  height: 750px;
+  width: 750px;
+  text-align: center;
+  background: var(--grey-dark);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.logoLetter {
+  color: var(--theme-color)
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.field {
+  padding: 5px;
+  background: var(--grey-dark);
+  border: 1px solid var(--grey-light);
+  height: 48px;
+  width: 324px;
+  border-radius: 3px;
+}
+
+.fieldBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 324px;
+  margin: 0 auto;
+  text-align: start;
+
+}
+
+.label {
+  font-weight: bold;
+}
+
+.buttonSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px
+}
+
+.errorMessage {
+  color: var(--error)
+}
+
+.submitButton {
+  cursor: pointer;
+  background: var(--theme-color);
+  width: 324px;
+  height: 48px;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+.showPassword {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  top: 35px;
+}
+
+.loginLink, .login {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.login {
+  color: var(--theme-color);
+  cursor: pointer;
+}

@@ -1,12 +1,12 @@
 export type TLoginRequest = {
     email?: string
-    login?: string
+    name?: string
     password: string
 }
 
 export type TRegisterRequest = {
     email: string
-    login: string
+    name: string
     password: string
 }
 

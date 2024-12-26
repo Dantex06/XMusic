@@ -2,3 +2,9 @@
   padding: 30px;
   grid-area: main;
 }
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}

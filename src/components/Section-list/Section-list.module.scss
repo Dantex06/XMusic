@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+}
+
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  svg path {
+    stroke-width: 2.5px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+.items {
+  overflow-x: scroll;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  max-width: 69vw;
+  user-select: none;
+}
+
+.items::-webkit-scrollbar {
+  display: none;
+}
+
+.itemsWithoutMenu {
+  max-width: 95vw;
+}

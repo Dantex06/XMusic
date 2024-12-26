@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-import SongExample from '@/assets/images/Playing-example.jpg'
+import SongExample from '@/assets/images/examples/Playing-example.jpg'
 import PlayIcon from '@/assets/icons/main/play.svg'
 
 import styles from './Playing.module.scss'
