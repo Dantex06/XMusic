@@ -1,0 +1,88 @@
+.musicItem {
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  background: var(--second-main-color);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.musicImage {
+    width: 100px;
+    height: 100px;
+
+}
+
+.infoSection {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.musicTitle {
+  font-weight: bold;
+}
+
+.buttonSection {
+  svg {
+    height: 50px;
+    width: 50px;
+  }
+
+  display: flex;
+  align-items: center;
+  height: 50px;
+  gap: 25px;
+}
+
+.musicItem:hover {
+  background: var(--gradient-gray);
+  .playIcon {
+    opacity: 1;
+  }
+  .closeIcon {
+    opacity: 1;
+  }
+  .addIcon {
+    opacity: 1;
+  }
+}
+
+.playIcon {
+  cursor: pointer;
+  background: var(--theme-color);
+  border-radius: 25px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  svg {
+    margin-left: 2px;
+  }
+}
+
+.closeIcon {
+  cursor: pointer;
+  height: 50px;
+  svg g path{
+    stroke: var(--error);
+  }
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.addIcon {
+  cursor: pointer;
+  height: 50px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}

@@ -1,7 +1,6 @@
 'use client'
 
-import { Header, Menu } from '@/components'
-import { ProfileMenu } from '@/components/ProfileMenu/ProfileMenu'
+import { Header, Menu, ProfileMenu } from '@/widgets'
 
 import { usePathname } from 'next/navigation'
 import { staticLinks } from '@/assets/routingLinks'

@@ -3,11 +3,10 @@
 import { useState } from 'react'
 import clsx from 'clsx'
 
-import { Profile } from '@/components'
-import { Friends } from '@/components/ProfileMenu/components/sections/friends/Friends'
-import { Playing } from '@/components/ProfileMenu/components/sections/playing/Playing'
+import { Friends, Playing } from '@/widgets/ProfileMenu/components/sections'
 
 import ArrowIcon from '@/assets/icons/main/arrow.svg'
+import ProfileIcon from '@/assets/icons/main/user.svg'
 
 import styles from './ProfileMenu.module.scss'
 
@@ -38,7 +37,9 @@ export const ProfileMenu = () => {
                 >
                     <div className={styles.profileSection}>
                         <div className={styles.profile}>
-                            <Profile />
+                            <div className={styles.profileIconContainer}>
+                                <ProfileIcon />
+                            </div>
                             <p>Egor Rogachev</p>
                         </div>
                         <div

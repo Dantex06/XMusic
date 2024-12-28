@@ -62,7 +62,7 @@
 }
 
 .sectionItem:hover {
-  background-image: linear-gradient(to right, #272727, var(--second-main-color));
+  background-image: var(--gradient-gray)
 }
 
 .icon {
@@ -90,4 +90,24 @@
   background-color: var(--theme-color);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.addPlaylist {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.formPlaylist {
+  margin-bottom: 10px;
+}
+
+.inputField {
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+  height: 35px;
+  margin-left: 25px;
+  background: none;
+  border: 1px solid var(--grey-light);
 }

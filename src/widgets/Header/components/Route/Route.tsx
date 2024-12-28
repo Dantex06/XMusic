@@ -2,10 +2,12 @@
 
 import { usePathname } from 'next/navigation'
 
+import { routeConfig } from '@/widgets/Header/components'
+
 import ArrowIcon from '@/assets/icons/main/arrow.svg'
 
 import styles from './Route.module.scss'
-import { routeConfig } from '@/components/Header/components/Route/route-config'
+
 import clsx from 'clsx'
 import Link from 'next/link'
 

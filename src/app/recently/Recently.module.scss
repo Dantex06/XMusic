@@ -1,0 +1,14 @@
+.recentlyPage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.musicItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

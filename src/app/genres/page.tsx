@@ -8,7 +8,7 @@ import { dynamicLinks } from '@/assets/routingLinks'
 
 const Genre = () => {
     return (
-        <div className={styles.genreSection}>
+        <div className={styles.genrePage}>
             {GenreTypesList.map((genreType) => {
                 return (
                     <Link

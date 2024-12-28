@@ -67,7 +67,10 @@ export const menuConfig: TMenuConfig[] = [
             },
         ],
     },
-    {
+]
+
+export const playlistConfig = () => {
+    return {
         sectionTitle: 'PLAYLIST',
         items: [
             {
@@ -77,5 +80,5 @@ export const menuConfig: TMenuConfig[] = [
                 link: staticLinks.playlist + '/1',
             },
         ],
-    },
-]
+    }
+}

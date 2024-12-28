@@ -1,5 +1,4 @@
-import { Route } from '@/components/Header/components/Route'
-import { Notification } from '@/components/Header/components/Notification'
+import { Notification, Route } from '@/widgets/Header/components'
 
 import SearchIcon from '@/assets/icons/main/search.svg'
 

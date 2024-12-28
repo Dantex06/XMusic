@@ -3,7 +3,7 @@ import { ArtistItem } from '@/components'
 
 const Artists = () => {
     return (
-        <div className={styles.artistsSection}>
+        <div className={styles.artistsPage}>
             <ArtistItem />
             <ArtistItem />
             <ArtistItem />
