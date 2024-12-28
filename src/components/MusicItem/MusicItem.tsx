@@ -3,7 +3,7 @@ import Image from 'next/image'
 import MusicExampleImage from '@/assets/images/examples/MusicCard-example.png'
 import PlayIcon from '@/assets/icons/main/playItem.svg'
 import DeleteIcon from '@/assets/icons/main/cross.svg'
-import AddIcon from '@/assets/icons/main/addItem.svg'
+// import AddIcon from '@/assets/icons/main/addItem.svg'
 
 import styles from './MusicItem.module.scss'
 
