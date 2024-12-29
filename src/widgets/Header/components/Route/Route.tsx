@@ -16,27 +16,25 @@ export const Route = () => {
     const [firstPage, secondPage] = routeConfig(pathname)
 
     return (
-        <div className={styles.route}>
-            <div className={styles.routeLinks}>
-                <Link
-                    href={firstPage.link}
-                    className={clsx(styles.link, {
-                        [styles.unActiveLink]: secondPage,
-                    })}
-                >
-                    {firstPage.title}
-                </Link>
-                {secondPage && (
-                    <>
-                        <div className={styles.arrow}>
-                            <ArrowIcon />
-                        </div>
-                        <Link className={styles.link} href={secondPage.link}>
-                            {secondPage.title}
-                        </Link>
-                    </>
-                )}
-            </div>
+        <div className={styles.routeLinks}>
+            <Link
+                href={firstPage.link}
+                className={clsx(styles.link, {
+                    [styles.unActiveLink]: secondPage,
+                })}
+            >
+                {firstPage.title}
+            </Link>
+            {secondPage && (
+                <>
+                    <div className={styles.arrow}>
+                        <ArrowIcon />
+                    </div>
+                    <Link className={styles.link} href={secondPage.link}>
+                        {secondPage.title}
+                    </Link>
+                </>
+            )}
         </div>
     )
 }

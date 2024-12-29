@@ -57,8 +57,11 @@ const ProfileSlice = createSlice({
             return { ...state, isLoading: false, isAuthenticated: true }
         })
         builder.addCase(loginRequest.rejected, (state, action) => {
-            state.error = action.error.name ?? null
-            return { ...state, isLoading: false }
+            return {
+                ...state,
+                isLoading: false,
+                error: action.error.name || null,
+            }
         })
         builder.addCase(logoutRequest.fulfilled, (state) => {
             deleteCookie('accessToken')

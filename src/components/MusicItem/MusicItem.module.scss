@@ -9,8 +9,8 @@
 }
 
 .musicImage {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 
 }
 
@@ -42,19 +42,6 @@
   gap: 25px;
 }
 
-.musicItem:hover {
-  background: var(--gradient-gray);
-  .playIcon {
-    opacity: 1;
-  }
-  .closeIcon {
-    opacity: 1;
-  }
-  .addIcon {
-    opacity: 1;
-  }
-}
-
 .playIcon {
   cursor: pointer;
   background: var(--theme-color);
@@ -65,6 +52,7 @@
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
   svg {
     margin-left: 2px;
   }
@@ -73,9 +61,11 @@
 .closeIcon {
   cursor: pointer;
   height: 50px;
-  svg g path{
+
+  svg g path {
     stroke: var(--error);
   }
+
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -85,4 +75,20 @@
   height: 50px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.musicItem:hover {
+  background: var(--gradient-gray);
+
+  .playIcon {
+    opacity: 1;
+  }
+
+  .closeIcon {
+    opacity: 1;
+  }
+
+  .addIcon {
+    opacity: 1;
+  }
 }

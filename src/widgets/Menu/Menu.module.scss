@@ -12,6 +12,7 @@
 .menu {
   grid-area: menu;
   @include new-flex-col-gap(24px);
+
   background-color: var(--second-main-color);
   width: 220px;
   height: 100vh;
@@ -19,12 +20,13 @@
 }
 
 .title {
-  font-family: 'FugazOne', sans-serif;
+  font-family: FugazOne, sans-serif;
   padding-left: 25px;
   font-size: 48px;
   color: var(--theme-color);
+
   span {
-    font-family: 'FugazOne', sans-serif;
+    font-family: FugazOne, sans-serif;
     font-size: 48px;
   }
 }
@@ -57,6 +59,7 @@
   padding-left: 25px;
   height: 48px;
   @include new-flex-gap(16px);
+
   align-items: center;
   cursor: pointer;
 }

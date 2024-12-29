@@ -13,11 +13,6 @@
   transition: 0.2s ease-in;
 }
 
-.card:hover .playIcon {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .playIcon {
   background: var(--theme-color);
   border-radius: 25px;
@@ -34,12 +29,17 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+.card:hover .playIcon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .imageSection {
   img {
     width: 192px;
     height: 192px;
     border-radius: 12px;
-    margin: 10px 10px 0 10px;
+    margin: 10px 10px 0;
   }
 }
 

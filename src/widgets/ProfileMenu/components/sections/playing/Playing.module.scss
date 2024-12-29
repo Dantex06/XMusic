@@ -9,6 +9,7 @@
 
 .imageBlock {
   margin-top: 15px;
+
   img {
     width: 220px;
     height: 220px;
@@ -43,7 +44,6 @@
 }
 
 .nextTrackInfo:hover {
-
   border-radius: 8px;
   background-color: var(--grey-default);
 }
@@ -51,18 +51,18 @@
 .nextTrack {
   padding: 5px;
   margin-top: 15px;
-
   background-color: var(--grey-dark);
   border-radius: 8px;
 }
 
 .nextTitle {
-  padding: 5px 5px 0 5px;
+  padding: 5px 5px 0;
   font-weight: bold;
 }
 
 .nextTrackIcon {
   position: relative;
+
   img {
     border-radius: 8px;
     width: 48px;

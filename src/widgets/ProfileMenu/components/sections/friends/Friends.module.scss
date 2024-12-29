@@ -16,6 +16,7 @@
 
 .search{
   cursor: pointer;
+
   svg {
     fill: var(--white);
     fill-opacity: 1;
@@ -53,6 +54,7 @@
 
 .shareIcon:hover {
   cursor: pointer;
+
   svg {
     stroke: var(--theme-color);
   }
