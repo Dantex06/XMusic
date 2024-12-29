@@ -10,6 +10,12 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    rules: {
+      'react/jsx-indent': [2, 4],
+      'no-unused-vars': 'warn'
+    }
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 

@@ -11,9 +11,8 @@ export type TRegisterRequest = {
 }
 
 export type TAuthResponse = {
-    access_token: string
-    refresh_token: string
-    id: string
-    name: string
-    email: string
+    tokens: {
+        accessToken: string
+        refreshToken: string
+    }
 }

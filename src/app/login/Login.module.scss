@@ -18,6 +18,10 @@
   gap: 25px
 }
 
+.blur {
+  filter: blur(3px);
+}
+
 .logoLetter {
   color: var(--theme-color)
 }

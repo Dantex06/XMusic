@@ -1,19 +1,22 @@
 'use client'
 
+import { Provider } from 'react-redux'
+import { usePathname } from 'next/navigation'
+import dynamic from 'next/dynamic'
+import clsx from 'clsx'
+
+import store from '@/store'
+
 import { Header, Menu, ProfileMenu } from '@/widgets'
 
-import { usePathname } from 'next/navigation'
+import { useScreenDetector } from '@/utils/hooks/useScreenDetector'
+
 import { staticLinks } from '@/assets/routingLinks'
 
 import styles from './RouteLayout.module.scss'
-import dynamic from 'next/dynamic'
-import clsx from 'clsx'
-import store from '@/store'
-import { Provider } from 'react-redux'
-import { useScreenDetector } from '@/utils/hooks/useScreenDetector'
 
 export const RouteLayoutDynamic = dynamic(
-    () => import('@/app/utils/RouteLayout/RouteLayout'),
+    () => import('@/utils/layouts/RouteLayout/RouteLayout'),
     {
         ssr: false,
     }

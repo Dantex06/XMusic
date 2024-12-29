@@ -1,0 +1,29 @@
+.mainInfo {
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.settingsSection {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notificationBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  cursor: pointer;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-light);
+  width: 100%;
+  background-color: var(--grey-dark);
+}

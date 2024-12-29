@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { loginRequest, registerRequest } from '@/API/Profile/AuthService'
+import {
+    loginRequest,
+    logoutRequest,
+    registerRequest,
+} from '@/API/Profile/AuthService'
+import { deleteCookie, setCookie } from 'cookies-next'
 
 type Profile = {
     id: string | null
@@ -9,6 +14,7 @@ type Profile = {
 
 type ProfileState = {
     profile: Profile
+    isAuthenticated: boolean
     error: string | null
     isLoading: boolean
 }
@@ -19,6 +25,7 @@ const initialState: ProfileState = {
         name: null,
         email: null,
     },
+    isAuthenticated: false,
     error: null,
     isLoading: false,
 }
@@ -29,26 +36,34 @@ const ProfileSlice = createSlice({
     reducers: {},
     extraReducers(builder) {
         builder.addCase(registerRequest.pending, (state) => {
-            state.isLoading = true
+            return { ...state, isLoading: true }
         })
         builder.addCase(registerRequest.fulfilled, (state, action) => {
-            state.isLoading = false
-            state.profile = action.payload
+            setCookie('refreshToken', action.payload.tokens.refreshToken)
+            setCookie('accessToken', action.payload.tokens.accessToken)
+            return { ...state, isLoading: false, isAuthenticated: true }
         })
         builder.addCase(registerRequest.rejected, (state, action) => {
             state.isLoading = false
             state.error = action.error.name ?? null
+            return { ...state, isLoading: false }
         })
         builder.addCase(loginRequest.pending, (state) => {
-            state.isLoading = true
+            return { ...state, isLoading: true }
         })
         builder.addCase(loginRequest.fulfilled, (state, action) => {
-            state.isLoading = false
-            state.profile = action.payload
+            setCookie('refreshToken', action.payload.tokens.refreshToken)
+            setCookie('accessToken', action.payload.tokens.accessToken)
+            return { ...state, isLoading: false, isAuthenticated: true }
         })
         builder.addCase(loginRequest.rejected, (state, action) => {
-            state.isLoading = false
             state.error = action.error.name ?? null
+            return { ...state, isLoading: false }
+        })
+        builder.addCase(logoutRequest.fulfilled, (state) => {
+            deleteCookie('accessToken')
+            deleteCookie('refreshToken')
+            return { ...state, isAuthenticated: false }
         })
     },
 })

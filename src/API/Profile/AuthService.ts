@@ -1,13 +1,18 @@
-import axiosInstance from '@/API/interceptors'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { getCookie } from 'cookies-next'
 
+import axiosInstance from '@/API/interceptors'
 import { AuthEndpoints } from '@/API/Profile/AuthEndpoints'
 
-import { TLoginRequest, TRegisterRequest } from '@/API/Profile/types'
-import { createAsyncThunk } from '@reduxjs/toolkit'
+import {
+    TAuthResponse,
+    TLoginRequest,
+    TRegisterRequest,
+} from '@/API/Profile/types'
 
 export const registerRequest = createAsyncThunk(
-    'register/request',
-    async (params: TRegisterRequest) => {
+    'profile/register',
+    async (params: TRegisterRequest): Promise<TAuthResponse> => {
         console.log(params)
         const registerResponse = await axiosInstance.post(
             AuthEndpoints.Register,
@@ -18,14 +23,23 @@ export const registerRequest = createAsyncThunk(
 )
 
 export const loginRequest = createAsyncThunk(
-    'login/request',
-    async (params: TLoginRequest) => {
+    'profile/login',
+    async (params: TLoginRequest): Promise<TAuthResponse> => {
         console.log(params)
-        const registerResponse = await axiosInstance.post(
+        const loginResponse = await axiosInstance.post(
             AuthEndpoints.Login,
             params
         )
-        console.log(registerResponse.data)
-        return registerResponse.data
+        console.log(loginResponse.data)
+        return loginResponse.data
     }
 )
+
+export const logoutRequest = createAsyncThunk('profile/logout', async () => {
+    const refreshToken = getCookie('refreshToken')
+    console.log('123')
+    const logoutResponse = await axiosInstance.post(AuthEndpoints.Logout, {
+        refreshToken,
+    })
+    return logoutResponse.data
+})

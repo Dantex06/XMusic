@@ -3,7 +3,11 @@
 import { useState } from 'react'
 import clsx from 'clsx'
 
-import { Friends, Playing } from '@/widgets/ProfileMenu/components/sections'
+import {
+    Friends,
+    Playing,
+    Settings,
+} from '@/widgets/ProfileMenu/components/sections'
 
 import ArrowIcon from '@/assets/icons/main/arrow.svg'
 import ProfileIcon from '@/assets/icons/main/user.svg'
@@ -24,6 +28,8 @@ export const ProfileMenu = () => {
                 return <Friends />
             case 'playing':
                 return <Playing />
+            case 'settings':
+                return <Settings />
         }
     }
 
@@ -68,7 +74,10 @@ export const ProfileMenu = () => {
                             >
                                 Now playing
                             </button>
-                            <button className={styles.modalButton}>
+                            <button
+                                className={styles.modalButton}
+                                onClick={() => setPageMenu('settings')}
+                            >
                                 Settings
                             </button>
                         </div>

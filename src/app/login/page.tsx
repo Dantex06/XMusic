@@ -15,6 +15,8 @@ import styles from './Login.module.scss'
 import { useState } from 'react'
 import Link from 'next/link'
 import { staticLinks } from '@/assets/routingLinks'
+import clsx from 'clsx'
+import { LoadingSpinner } from '@/components'
 
 const LoginPage = () => {
     const {
@@ -32,13 +34,13 @@ const LoginPage = () => {
     }
     const [showPassword, setShowPassword] = useState(false)
 
-    if (isLoading) {
-        return <div>loading...</div>
-    }
-
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.loginPage}>
-            <div className={styles.blockSection}>
+            <div
+                className={clsx(styles.blockSection, {
+                    [styles.blur]: isLoading,
+                })}
+            >
                 <p className={styles.title}>
                     Login to <span className={styles.logoLetter}>X</span>Music
                 </p>
@@ -108,6 +110,7 @@ const LoginPage = () => {
                     </Link>
                 </p>
             </div>
+            {isLoading && <LoadingSpinner />}
         </form>
     )
 }

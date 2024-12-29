@@ -12,7 +12,7 @@ import { menuConfig, playlistConfig } from '@/widgets/Menu/Menu-config'
 
 export const Menu = () => {
     const pathname = usePathname()
-    const [playlist, setPlaylist] = useState<boolean>(true)
+    const [playlist, setPlaylist] = useState<boolean>(false)
 
     const addPlaylist = (namePlaylist: string) => {
         console.log('adding', namePlaylist)

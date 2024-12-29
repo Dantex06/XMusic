@@ -1,11 +1,11 @@
 .app {
   background: var(--background);
   display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
+  grid-template:
         'menu header profileMenu'
         'menu main profileMenu';
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 .appBlock {
@@ -14,11 +14,11 @@
 
 .smallWindow {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
+  grid-template:
         'header'
         'main';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   height: 100vh;
 }
 

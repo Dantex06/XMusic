@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 
-import { RouteLayoutDynamic } from '@/app/utils/RouteLayout/RouteLayout'
-
 import '@/assets/styles/index.scss'
+import { RouteLayoutDynamic, IsAuthLayoutDynamic } from '@/utils/layouts'
 
 export const metadata: Metadata = {
     title: 'XMusic',
@@ -25,7 +24,9 @@ export default function RootLayout({
         <html lang="ru">
             <body>
                 <RouteLayoutDynamic>
-                    <div>{children}</div>
+                    <IsAuthLayoutDynamic>
+                        <div>{children}</div>
+                    </IsAuthLayoutDynamic>
                 </RouteLayoutDynamic>
             </body>
         </html>
