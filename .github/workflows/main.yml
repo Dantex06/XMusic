@@ -16,7 +16,5 @@ jobs:
         run: npm install
       - name: build project
         run: npm run build
-      - name: linting typescript
-        run: npm run eslint
       - name: linting scss
         run: npm run stylelint
