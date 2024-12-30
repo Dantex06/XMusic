@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 import {
@@ -21,7 +21,7 @@ export const ProfileMenu = () => {
     const modalHandler = () => {
         setOpenModal(!openModal)
     }
-
+    
     const menuPage = () => {
         switch (pageMenu) {
             case 'friends':

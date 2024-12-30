@@ -1,0 +1,56 @@
+.errorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--second-main-color);
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  left: 25px;
+  top: 45px;
+  font-family: FugazOne, sans-serif;
+  padding-left: 25px;
+  font-size: 48px;
+  color: var(--theme-color);
+
+  span {
+    font-family: FugazOne, sans-serif;
+    font-size: 48px;
+  }
+}
+
+.errorSection {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  justify-content: center;
+  background: var(--white);
+  width: 600px;
+  height: 450px;
+  border-radius: 12px;
+}
+
+.errorTitle {
+  color: black;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.errorInfo {
+  color: black;
+  font-size: 24px;
+}
+
+.errorButton {
+  cursor: pointer;
+  font-size: 20px;
+  width: 200px;
+  height: 70px;
+  background: var(--theme-color);
+  border-radius: 12px;
+}

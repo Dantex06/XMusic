@@ -12,6 +12,10 @@ export const Settings = () => {
         dispatch(logoutRequest())
     }
 
+    const errorHandler = () => {
+        throw new Error()
+    }
+
     return (
         <div className={styles.mainInfo}>
             <p className={styles.sectionTitle}>Settings</p>
@@ -22,6 +26,9 @@ export const Settings = () => {
                 </div>
                 <button onClick={exitHandler} className={styles.button}>
                     Exit
+                </button>
+                <button onClick={errorHandler} className={styles.button}>
+                    Throw error
                 </button>
             </div>
         </div>
