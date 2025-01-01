@@ -17,6 +17,7 @@ import Link from 'next/link'
 import { staticLinks } from '@/assets/routingLinks'
 import clsx from 'clsx'
 import { LoadingSpinner } from '@/components'
+import { redirect } from 'next/navigation'
 
 const LoginPage = () => {
     const {
@@ -29,8 +30,7 @@ const LoginPage = () => {
     const { isLoading, error } = useAppSelector((state) => state.profile)
     const dispatch = useAppDispatch()
     const onSubmit: SubmitHandler<TLoginRequest> = (data) => {
-        console.log(data)
-        dispatch(loginRequest(data))
+        dispatch(loginRequest(data)).then(() => redirect(staticLinks.main))
     }
     const [showPassword, setShowPassword] = useState(false)
 

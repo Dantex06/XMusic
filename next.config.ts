@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
         return config
     },
     reactStrictMode: true,
+    pageExtensions: ['ts', 'tsx'],
 }
 
 export default nextConfig

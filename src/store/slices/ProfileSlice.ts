@@ -14,7 +14,6 @@ type Profile = {
 
 type ProfileState = {
     profile: Profile
-    isAuthenticated: boolean
     error: string | null
     isLoading: boolean
 }
@@ -25,7 +24,6 @@ const initialState: ProfileState = {
         name: null,
         email: null,
     },
-    isAuthenticated: false,
     error: null,
     isLoading: false,
 }
@@ -54,7 +52,7 @@ const ProfileSlice = createSlice({
         builder.addCase(loginRequest.fulfilled, (state, action) => {
             setCookie('refreshToken', action.payload.tokens.refreshToken)
             setCookie('accessToken', action.payload.tokens.accessToken)
-            return { ...state, isLoading: false, isAuthenticated: true }
+            return { ...state, isLoading: false }
         })
         builder.addCase(loginRequest.rejected, (state, action) => {
             return {
@@ -66,7 +64,7 @@ const ProfileSlice = createSlice({
         builder.addCase(logoutRequest.fulfilled, (state) => {
             deleteCookie('accessToken')
             deleteCookie('refreshToken')
-            return { ...state, isAuthenticated: false }
+            return { ...state }
         })
     },
 })

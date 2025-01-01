@@ -12,6 +12,7 @@ export default function Home() {
                 <CardPopular />
                 <SectionList title="Playlist" type={CardTypes.Music} />
                 <SectionList title="Genres" type={CardTypes.Genre} />
+                <SectionList title="Genres" type={CardTypes.Genre} />
             </div>
         </div>
     )

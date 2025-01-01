@@ -3,9 +3,11 @@
   display: grid;
   grid-template:
         'menu header profileMenu'
-        'menu main profileMenu';
-  grid-template-columns: 220px 1fr;
+        'menu main profileMenu'
+        'menu audio-player profileMenu';
+  grid-template-columns:220px 1fr;
   grid-template-rows: auto 1fr;
+  height: 100vh;
 }
 
 .appBlock {
@@ -16,7 +18,8 @@
   display: grid;
   grid-template:
         'header'
-        'main';
+        'main'
+        'audio-player';
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
@@ -27,8 +30,9 @@
   padding: 30px;
   margin: 0 auto;
   width: 100%;
-  height: 90vh;
+  height: 100%;
 }
+
 
 .main::-webkit-scrollbar {
   display: none;

@@ -17,6 +17,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { RegisterSchema } from '@/app/register/RegisterSchema'
 import { LoadingSpinner } from '@/components'
 import clsx from 'clsx'
+import { redirect } from 'next/navigation'
 
 const RegisterPage = () => {
     const {
@@ -27,8 +28,7 @@ const RegisterPage = () => {
     const { isLoading, error } = useAppSelector((state) => state.profile)
     const dispatch = useAppDispatch()
     const onSubmit: SubmitHandler<TRegisterRequest> = (data) => {
-        console.log(data)
-        dispatch(registerRequest(data))
+        dispatch(registerRequest(data)).then(() => redirect(staticLinks.main))
     }
     const [showPassword, setShowPassword] = useState(false)
 

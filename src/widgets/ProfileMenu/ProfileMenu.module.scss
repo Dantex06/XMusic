@@ -1,13 +1,13 @@
 .profileMenu {
   background: var(--second-main-color);
-  height: 100vh;
+  height: 100%;
   width: 288px;
   padding: 22px 20px 0;
   grid-area: profileMenu;
 }
 
 .profileSection {
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   display: flex;
   gap: 20px;
   align-items: center;

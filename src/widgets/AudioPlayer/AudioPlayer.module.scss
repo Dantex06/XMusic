@@ -1,0 +1,62 @@
+.audioPlayer {
+  grid-area: audio-player;
+  display: flex;
+  background: var(--second-main-color);
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  height: max-content;
+}
+
+.musicInfo {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.playingMusic {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 3px solid var(--theme-color);
+}
+
+.musicText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nameMusic {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.artists {
+  font-size: 18px;
+}
+
+.musicButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.buttonSection {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volumeLine {
+  border-radius: 25px;
+  width: 75px;
+  height: 6px;
+  background-color: var(--white);
+}

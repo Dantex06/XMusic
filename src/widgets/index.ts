@@ -1,4 +1,5 @@
 export * from './CardPopular'
 export * from './Menu'
+export * from './AudioPlayer'
 export * from './ProfileMenu'
 export * from './Header'

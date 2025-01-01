@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 import store from '@/store'
 
-import { Header, Menu, ProfileMenu } from '@/widgets'
+import { Header, Menu, AudioPlayer, ProfileMenu } from '@/widgets'
 
 import { useScreenDetector } from '@/utils/hooks/useScreenDetector'
 
@@ -46,6 +46,7 @@ export default function RouteLayout({
                     {children}
                 </div>
                 {isAuthPage && hideMenus && <ProfileMenu />}
+                <AudioPlayer />
             </div>
         </Provider>
     )
