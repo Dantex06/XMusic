@@ -2,6 +2,8 @@
   "extends": ["stylelint-config-standard-scss", "stylelint-prettier", "stylelint-config-prettier-scss"],
   "rules": {
     "at-rule-no-unknown": null,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null
   }
 }

@@ -9,7 +9,7 @@
 
 .button:hover {
   transition: 0.4s ease;
-  background-color: rgb(0 0 0 20%);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .ButtonSmall {
@@ -32,5 +32,5 @@
 
 .ButtonThemeColor:hover {
   transition: 0.4s ease;
-  background-color: rgba(29 185 84 80%);
+  background-color: rgba(29, 185, 84, 0.8);
 }
