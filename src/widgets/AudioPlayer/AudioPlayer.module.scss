@@ -1,14 +1,16 @@
 .audioPlayer {
+  position: relative;
   grid-area: audio-player;
   display: flex;
   background: var(--second-main-color);
   align-items: center;
   width: 100%;
-  padding: 15px;
+  padding: 25px;
   height: max-content;
 }
 
 .musicInfo {
+  position: absolute;
   display: flex;
   gap: 24px;
   align-items: center;
@@ -49,6 +51,8 @@
 }
 
 .volume {
+  position: absolute;
+  right: 25px;
   display: flex;
   align-items: center;
   gap: 10px;

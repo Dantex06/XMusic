@@ -6,6 +6,7 @@
   --grey-default: rgb(255 255 255 / 20%);
   --second-main-color: #242424;
   --gradient-gray: linear-gradient(to right, #272727, var(--second-main-color));
+  --gradient-gray-bottom : linear-gradient(to bottom, var(--grey-default), var(--second-main-color));
   --grey-ligher: #949494;
   --grey-light: #7F7F7F;
   --grey-dark: #1F1F1F;

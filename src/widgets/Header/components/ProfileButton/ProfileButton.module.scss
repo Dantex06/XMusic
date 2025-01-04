@@ -1,0 +1,53 @@
+.backgroundProfile {
+  padding-top: 5px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.showBackground {
+  background: var(--second-main-color);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.profile {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.userIcon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.modal {
+  background: var(--second-main-color);
+  width: 80px;
+  position: absolute;
+  text-align: center;
+  right: 30px;
+  top: 85px;
+  padding: 0 10px;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.modalButton {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  cursor: pointer;
+}

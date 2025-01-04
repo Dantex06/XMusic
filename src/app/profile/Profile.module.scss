@@ -1,0 +1,54 @@
+.userInfo {
+  padding: 25px;
+  gap: 30px;
+  background: var(--gradient-gray-bottom);
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: rgb(0 0 0 0.56%) 0 22px 70px 4px;
+  overflow: hidden;
+}
+
+.userIcon {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.profileText {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 52px;
+}
+
+.details {
+  display: flex;
+  gap: 10px;
+}
+
+.followersInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.currentTab {
+  padding: 0 25px;
+}
+
+.page {
+  background: var(--second-main-color);
+}
+
+.tabs {
+  padding: 0 20px;
+}

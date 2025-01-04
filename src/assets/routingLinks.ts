@@ -11,6 +11,9 @@ export const staticLinks = {
     favourite: '/favourite',
     playlist: '/playlist',
     recent: '/recently',
+    profile: '/profile/me',
+    profileSettings: '/profile/me?tab=settings',
+    profileFriends: '/profile/me?tab=friends',
 }
 
 export const dynamicLinks = {
