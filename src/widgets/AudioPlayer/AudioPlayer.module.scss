@@ -1,4 +1,8 @@
 .audioPlayer {
+
+}
+
+.info {
   position: relative;
   grid-area: audio-player;
   display: flex;
@@ -7,6 +11,30 @@
   width: 100%;
   padding: 25px;
   height: max-content;
+}
+
+.musicLine {
+  width: 100%;
+  background: var(--grey-default);
+  height: 6px;
+}
+
+.playingLine {
+  height: 6px;
+  z-index: 3;
+  position: relative;
+  background: var(--theme-color);
+}
+
+.buttonLine {
+  bottom: -5px;
+  right: -2px;
+  z-index: 2;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--theme-color);
+  border-radius: 25px;
 }
 
 .musicInfo {

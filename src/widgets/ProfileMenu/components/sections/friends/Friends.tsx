@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import UserExample from '@/assets/images/examples/User-example.png'
+import User2Example from '@/assets/images/examples/Artist-example.png'
 import ShareIcon from '@/assets/icons/main/share-audio.svg'
 
 import styles from './Friends.module.scss'
@@ -17,92 +18,23 @@ export const Friends = () => {
             </div>
             <div className={styles.friendsInfo}>
                 <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
+                    <Image
+                        className={styles.userIcon}
+                        src={UserExample}
+                        alt="logo"
+                    />
                     <p className={styles.userName}>James Rodriguez</p>
                     <div className={styles.shareIcon}>
                         <ShareIcon />
                     </div>
                 </div>
                 <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
-                    <div className={styles.shareIcon}>
-                        <ShareIcon />
-                    </div>
-                </div>
-                <div className={styles.user}>
-                    <Image src={UserExample} alt="logo" />
-                    <p className={styles.userName}>James Rodriguez</p>
+                    <Image
+                        className={styles.userIcon}
+                        src={User2Example}
+                        alt="logo"
+                    />
+                    <p className={styles.userName}>Fernando Alonso</p>
                     <div className={styles.shareIcon}>
                         <ShareIcon />
                     </div>
