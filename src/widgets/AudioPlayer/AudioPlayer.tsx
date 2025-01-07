@@ -12,7 +12,7 @@ import styles from './AudioPlayer.module.scss'
 
 export const AudioPlayer = () => {
     return (
-        <div className={styles.audioPlayer}>
+        <div>
             <div className={styles.musicLine}>
                 <div style={{ width: '35%' }} className={styles.playingLine}>
                     <div className={styles.buttonLine}></div>
