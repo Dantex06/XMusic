@@ -28,9 +28,11 @@ export default function RouteLayout({
     const pathname = usePathname()
     const { width } = useScreenDetector()
     const hideMenus = width > 1900
-    const isAuthPage = ![staticLinks.register, staticLinks.login].includes(
-        pathname
-    )
+    const isAuthPage = ![
+        staticLinks.register,
+        staticLinks.login,
+        staticLinks.about,
+    ].includes(pathname)
 
     return (
         <Provider store={store}>
@@ -46,7 +48,7 @@ export default function RouteLayout({
                     {children}
                 </div>
                 {isAuthPage && hideMenus && <ProfileMenu />}
-                <AudioPlayer />
+                {isAuthPage && <AudioPlayer />}
             </div>
         </Provider>
     )

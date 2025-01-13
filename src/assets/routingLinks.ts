@@ -6,6 +6,7 @@ export const staticLinks = {
     main: '/',
     register: '/register',
     login: '/login',
+    about: '/about',
     genres: '/genres',
     artists: '/artists',
     favourite: '/favourite',

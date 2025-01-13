@@ -1,3 +1,341 @@
 .about {
-  display: block;
+  cursor: none;
+  background: #0A1712;
+}
+
+.cursor {
+  z-index: 2;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #26ff73;
+  animation: cursor-move 1s infinite alternate;
+}
+
+@keyframes cursor-move {
+  0% {
+    box-shadow: 0 0 10px 5px #10612c;
+  }
+
+  100% {
+    box-shadow: 0 0 20px 10px #10612c;
+  }
+}
+
+.titleSection {
+  height: 845px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 650px;
+  position: relative;
+}
+
+.logo {
+  width: 182px;
+  height: 182px;
+}
+
+.titleText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 415px;
+
+  .title {
+    font-family: FugazOne, sans-serif;
+    font-size: 48px;
+    color: var(--theme-color);
+  }
+
+  .title span {
+    font-family: FugazOne, sans-serif;
+    font-size: 48px;
+  }
+
+  .info {
+    font-family: Gabarito, sans-serif;
+    font-size: 30px;
+  }
+
+  .joinInfo {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    p, button {
+      font-family: Gabarito, sans-serif;
+      font-size: 30px;
+    }
+
+    button {
+      width: 107px;
+      height: 52px;
+      cursor: none;
+      border-radius: 10px;
+      background: var(--theme-color);
+    }
+  }
+}
+
+.bottomIcon {
+  text-align: center;
+}
+
+.featuresTextBlock {
+  padding-top: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  width: 460px;
+}
+
+.featuresText {
+  font-family: Gabarito, sans-serif;
+  font-size: 28px;
+
+  span {
+    font-family: Gabarito, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+  }
+}
+
+.featuresFrames {
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 35px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 10px;
+  height: 213px;
+  width: 378px;
+  padding: 20px;
+
+  .frameTitle {
+    font-family: Gabarito, sans-serif;
+    font-size: 32px;
+  }
+
+  .frameInfo {
+    font-family: Gabarito, sans-serif;
+    font-size: 18px;
+  }
+}
+
+.technologiesSection {
+  padding-bottom: 100px;
+
+  .techText {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .techTitle {
+    font-family: Gabarito, sans-serif;
+    font-size: 48px;
+  }
+
+  .techInfo {
+    text-align: center;
+    font-family: Gabarito, sans-serif;
+    font-size: 28px;
+    width: 420px;
+  }
+
+  .technologies {
+    margin: 0 auto;
+    width: 625px;
+    padding-top: 50px;
+
+    .rowContainer {
+      width: 625px;
+      flex-flow: row wrap;
+      padding-top: 25px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .techBlock:first-child {
+      margin: 0 auto;
+    }
+
+
+    .techBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--second-main-color);
+      width: 300px;
+      height: 200px;
+      border-radius: 15px;
+      position: relative; /* Необходимо для абсолютного позиционирования текста */
+      overflow: hidden; /* Скрываем вылезающий текст за пределы блока */
+
+      .hoverBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        transition: filter 0.5s ease; /* Плавный переход фильтра */
+      }
+
+      .hoverBlock:hover {
+        filter: blur(7px); /* Размытие фона при наведении */
+      }
+
+      .label {
+        font-family: Gabarito, sans-serif;
+        font-size: 30px;
+        position: absolute; /* Абсолютное позиционирование для наложения на фон */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Центрирование текста */
+        opacity: 0; /* Текст скрыт по умолчанию */
+        transition: opacity 0.5s ease; /* Плавное изменение прозрачности */
+        pointer-events: none; /* Текст не перехватывает события мыши */
+        z-index: 1;
+      }
+    }
+
+    .techBlock:hover {
+      .label {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.imagesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  .imagesText {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    .imagesTitle {
+      font-family: Gabarito, sans-serif;
+      font-size: 48px;
+    }
+
+    .info {
+      width: 521px;
+      font-family: Gabarito, sans-serif;
+      font-size: 28px;
+
+      span {
+        color: var(--theme-color)
+      }
+    }
+  }
+
+  .images {
+    .imagesList {
+      width: 98vw;
+      overflow-x: hidden;
+      margin: 0 auto;
+      display: flex;
+      gap: 30px;
+
+
+      .imageBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 360px;
+        height: 190px;
+        background-image: url('../../assets/images/about/dot.png');
+        background-repeat: round;
+
+
+        .image {
+          width: 315px;
+          height: 150px;
+          object-fit: cover;
+        }
+      }
+
+      @keyframes scroll-right {
+        from {
+          transform: translateX(0); /* Начальное положение */
+        }
+
+        to {
+          transform: translateX(-100%); /* Конечное положение */
+        }
+      }
+    }
+
+    .imageList::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+
+  .imageList::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.attention {
+  padding: 150px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+
+  .attentionTitle {
+    font-family: Gabarito, sans-serif;
+    font-size: 48px;
+  }
+
+  .attentionButton {
+    cursor: none;
+    background: var(--theme-color);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: Gabarito, sans-serif;
+    font-size: 28px;
+  }
+}
+
+.pink {
+  border: 2px solid #F80888;
+}
+
+.violet {
+  border: 2px solid #9717F7;
+}
+
+.blue {
+  border: 2px solid #1465F1;
+}
+
+.theme {
+  border: 2px solid var(--theme-color);
 }
